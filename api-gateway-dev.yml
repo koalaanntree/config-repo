@@ -1,0 +1,17 @@
+zuul:
+  routes:
+    myProduct:
+      path: /myProduct/**
+      serviceId: product
+      #敏感头的过滤
+      sensitiveHeaders:
+  #简介写法
+#    product: /myProduct/**
+  #排除某些路由
+  ignored-patterns:
+    - /**/product/listForOrder
+#    - /product/product/listForOrder
+#    - /myProduct/product/listForOrder
+management:
+  security:
+    enabled: false
